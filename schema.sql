@@ -1,10 +1,9 @@
--- Database Creation
+DROP DATABASE IF EXISTS Bamazon;
+
 CREATE DATABASE Bamazon;
 
 USE Bamazon;
 
-
--- ============================ First Table ============================
 
 CREATE TABLE Products(
 ItemID INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -13,7 +12,7 @@ DepartmentName VARCHAR(30),
 Price DOUBLE(10,2),
 StockQuantity INTEGER);
 
--- Seed Items into Database
+
 INSERT INTO Products(ProductName, DepartmentName, Price, StockQuantity)
 VALUES ("Eggs", "grocery", 1.99, 12),
   ("Milk", "grocery", 2.99, 24),
@@ -29,8 +28,7 @@ VALUES ("Eggs", "grocery", 1.99, 12),
   ("Office Space", "dvds", 9.99, 21),
   ("Dark Side of the Moon", "music", 11.55, 15);
 
--- View Database Entries
--- SELECT * FROM Products;
+
 
 
 -- ============================ Second Table ============================
@@ -49,6 +47,3 @@ VALUES ("grocery", 10500.00, -10000.00), -- More fun stuff (refunds for days!) ;
   ("books", 5000.00, 0.00),
   ("dvds", 20000.00, 0.00),
   ("music", 7500.00, 0.00);
-
--- View Database Entries
--- SELECT * FROM Departments;
