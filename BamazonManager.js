@@ -1,14 +1,8 @@
-// Require prompt node package 
 var prompt = require('prompt');
-
-// Require mySQL node package
 var mysql = require('mysql');
-
-// Require my homegrown table padding function
 var padText = require('./padTable.js')
 
 
-// Link to mySQL Database
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -17,15 +11,12 @@ var connection = mysql.createConnection({
     database: "Bamazon"
 });
 
-// Connect to Database
 connection.connect(function(err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
 
-
   prompt.start();
 
- 
   console.log('\nBamazon Shift Manager Menu'); 
   console.log('----------------------------')
   console.log('Select a (numeric) option.')

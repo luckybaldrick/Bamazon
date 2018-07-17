@@ -1,0 +1,17 @@
+{
+    "name": "bamazon",
+    "version": "1.0.0",
+    "main": "BamazonCustomer.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/luckybaldrick/Bamazon"
+    },
+    "license": "ISC",
+    "dependencies": {
+      "mysql": "^2.11.1",
+      "prompt": "^1.0.0"
+    }
+  }
