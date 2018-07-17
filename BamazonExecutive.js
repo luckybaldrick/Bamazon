@@ -62,42 +62,26 @@ function viewSalesByDept(){
     
 
     for(var i = 0; i < res.length; i++){
-
-
       var departmentID = res[i].DepartmentID + ''; 
       departmentID = padText("  ID  ", departmentID);
-
       var departmentName = res[i].DepartmentName + ''; 
       departmentName = padText("  Department Name  ", departmentName);
-
-
       var overHeadCost = res[i].OverHeadCosts.toFixed(2);
       var totalSales = res[i].TotalSales.toFixed(2);
       var totalProfit = (parseFloat(totalSales) - parseFloat(overHeadCost)).toFixed(2);
-
-
-
       overHeadCost = '$' + overHeadCost;
       totalSales = '$' + totalSales;
       totalProfit = '$' + totalProfit;
-
-
       overHeadCost = padText("  OverHead Costs ", overHeadCost);
       totalSales = padText("  Product Sales  ", totalSales);
       
       console.log(departmentID + '|' + departmentName + '|' + overHeadCost + '|' + totalSales + '|  ' + totalProfit);
     }
-
     connection.end(); 
-
   });
-
 }
 
-
 function addNewDept(){
-
-
   prompt.start();
   console.log('\nComplete the new department details:');
   prompt.get(['DepartmentName', 'OverHeadCosts', 'TotalSales'], function (err, result) {
@@ -106,13 +90,11 @@ function addNewDept(){
     var overHeadCost = result.OverHeadCosts;
     var totalSales = result.TotalSales;
 
-
     connection.query('INSERT INTO Departments SET ?', {
       DepartmentName: departmentName,
       OverHeadCosts: overHeadCost,
       TotalSales: totalSales
     }, function(err, res){
-
 
       if(err){
         console.log('\nSorry. The SQL database could not be updated.\n' +
@@ -123,9 +105,6 @@ function addNewDept(){
         console.log('\nNew Department updated successfully! Very customer centric!'); // last inside joke, i swear :)
         connection.end(); 
       }
-
     }); 
-
   }); 
- 
 }
